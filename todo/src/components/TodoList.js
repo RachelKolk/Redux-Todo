@@ -9,11 +9,30 @@ class TodoList extends React.Component {
         newTodo: ''
     };
 
+    handleChanges = e => {
+        this.setState({newTodo: e.target.value});
+    };
+
+    addTodo = e => {
+        e.preventDefault();
+        this.props.addNewTodo(this.state.newTodo);
+    };
+
 
     render() {
         return (
             <>
-                <h2>todos mapped out will go here</h2>
+                <div>
+                    <h2>todos mapped out will go here</h2>
+                </div>
+
+                <input
+                    type="text"
+                    value={this.state.newTodo}
+                    onChange={this.handleChanges}
+                />
+
+                <button onClcik={this.addTodo}>Add To List</button>
             </>
         );
     }
@@ -25,5 +44,5 @@ const mapStateToProps = state => ({
 
 export default connect(
     mapStateToProps,
-    {}
+    {addNewTodo}
 )(TodoList);

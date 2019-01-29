@@ -22,7 +22,8 @@ function reducer(state = initialState, action) {
                 ...state,
                 todos: [...state.todos, newTodo]
             };
-
+        default:
+            return state;
     }
 }
 
