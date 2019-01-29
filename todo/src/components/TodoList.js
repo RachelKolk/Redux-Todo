@@ -1,6 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
+import {addNewTodo} from '../actions';
+
 
 class TodoList extends React.Component {
     state = {
