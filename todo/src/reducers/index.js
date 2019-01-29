@@ -1,4 +1,4 @@
-import {ADD_TODO, TOGGLE_TODO} from '../actions';
+import {ADD_TODO, TOGGLE_TODO, DELETE_TODO} from '../actions';
 
 
 const initialState = {
@@ -30,6 +30,13 @@ function reducer(state = initialState, action) {
                   action.payload === index ? {...todo, completed: !todo.completed} : todo
                 )
             };
+        case DELETE_TODO:
+        console.log('delete_todo', action);
+            return {
+                todos: state.todos.filter((todo, index) =>
+                  index !== action.payload
+                )
+            }; 
         default:
             return state;
     }
