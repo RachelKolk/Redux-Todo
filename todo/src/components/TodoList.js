@@ -23,7 +23,10 @@ class TodoList extends React.Component {
         return (
             <>
                 <div>
-                    <h2>todos mapped out will go here</h2>
+                    {this.props.todos.map((todo, index) => (
+                        <h2 key={index}>{todo.value}</h2>
+                    ))}
+                    
                 </div>
 
                 <input
@@ -32,7 +35,7 @@ class TodoList extends React.Component {
                     onChange={this.handleChanges}
                 />
 
-                <button onClcik={this.addTodo}>Add To List</button>
+                <button onClick={this.addTodo}>Add To List</button>
             </>
         );
     }
