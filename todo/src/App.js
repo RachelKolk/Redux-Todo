@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>My To Do List</h1>
-        <p>Made Possible by Redux</p>
+        <p>made possible by redux</p>
         <TodoList />
       </div>
     );

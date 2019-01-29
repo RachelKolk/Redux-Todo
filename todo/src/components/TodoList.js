@@ -24,7 +24,7 @@ class TodoList extends React.Component {
             <>
                 <div>
                     {this.props.todos.map((todo, index) => (
-                        <h2 key={index}>{todo.value}</h2>
+                        <h3 key={index}>{todo.value}</h3>
                     ))}
                     
                 </div>
