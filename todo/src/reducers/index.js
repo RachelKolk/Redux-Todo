@@ -12,9 +12,14 @@ function reducer(state = initialState, action) {
     switch (action.type) {
         case ADD_TODO:
             console.log('add_todo', action);
+            const newTodo = {
+                value: action.payload,
+                completed: false
+            };
             return {
-
-            }
+                ...state,
+                todos: [...state.todos, newTodo]
+            };
 
     }
 }
